@@ -5,22 +5,22 @@ import java.util.List;
 
 public class Generics {
 
-    //TODO: Refactor Method-1
-    public List boxingMethod(String name) {
-        List firstList = new ArrayList<>();
+    // Refactored Method-1: Uses parameterized lists
+    public <T> List<List<T>> boxingMethod(T name) {
+        List<T> firstList = new ArrayList<>();
         firstList.add(name);
-        List secondList = new ArrayList<>();
+        List<List<T>> secondList = new ArrayList<>();
         secondList.add(firstList);
         return secondList;
     }
 
-    //TODO: Refactor Method-2
-    public Object genericMethod(Object data) {
+    // Refactored Method-2: Generic method returns the object itself
+    public <T> T genericMethod(T data) {
         return data;
     }
 
-    //TODO: Refactor Method-3
-    public void cloneMethod(List consumer, List producer) {
+    // Refactored Method-3: Clone method copies elements from producer to consumer list
+    public <T> void cloneMethod(List<T> consumer, List<T> producer) {
         consumer.addAll(producer);
     }
 
